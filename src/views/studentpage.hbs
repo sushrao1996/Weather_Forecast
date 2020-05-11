@@ -1,0 +1,120 @@
+{{!-- Student details --}}
+<div class="container">
+  <h1>Student Details</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each studentsList}}
+      <tr>
+        <th scope="row">{{this.id}}</th>
+        <td>{{this.firstName}}</td>
+        <td>{{this.lastName}}</td>
+        <td>{{this.age}}</td>
+        <td>{{this.gender}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <h1>Top Scorer</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Mark</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each topScorer}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.subject}}</td>
+        <td>{{this.mark}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <h1>Overall Top Scorer</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">TotalMarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each OverallTopScorer}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.total}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <h1>Average Scores</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Subject</th>
+        <th scope="col">Average</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each avgscores}}
+      <tr>
+        <td>{{this.subject}}</td>
+        <td>{{this.average}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <h1>Below 35</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Subject</th>
+        <th scope="col">Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each below35}}
+      <tr>
+        <td>{{this.subject}}</td>
+        <td>{{this.count}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <h1>Students Mark List</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th>English</th>
+        <th>Tamil</th>
+        <th>Maths</th>
+        <th>Science</th>
+        <th>Computer</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {{#each studentmarks}}
+      <tr>
+        <td>{{this.name}}</td>
+        {{#each this.mark}}
+        <td>{{this}}</td>
+        {{/each}}
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

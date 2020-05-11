@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Weather Report of Chennai</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Day</th>
+        <th scope="col">High/LowTemperature</th>
+        <th scope="col">Climate</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each weatherForecast}}
+      <tr>
+        <th scope="row">{{formatDate this.time}}</th>
+        <td>{{this.temperatureHigh}}/{{this.temperatureLow}}</td>
+        <td>{{this.summary}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
